@@ -22,12 +22,13 @@ class Store {
     _createTestData(){
         const testData = {
             "movie1": {
-                "title" : "A Sunday in Hell",
-                "description" : "The film follows the French Paris-Roubaix spring classic, notorious for the hellish paves or cobbled roads of the north, which are no longer used for traffic but only for transporting,",
-                "director" : "Jørgen Leth",
-                "year" : "1977",
-                "genre" : "Documentary",
-                "img" : "https://m.media-amazon.com/images/M/MV5BYjVhMTE3YzEtOGEwYS00NjFmLWFjYzAtMGVjNjY3YWY4OTJhL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                id : "tt4380",
+                title : "A Sunday in Hell",
+                description : "The film follows the French Paris-Roubaix spring classic, notorious for the hellish paves or cobbled roads of the north, which are no longer used for traffic but only for transporting,",
+                director : "Jørgen Leth",
+                year : "1977",
+                genre : "Documentary",
+                img : "https://m.media-amazon.com/images/M/MV5BYjVhMTE3YzEtOGEwYS00NjFmLWFjYzAtMGVjNjY3YWY4OTJhL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
             },
             "movie2": {
                 "title" : "Reptilicus",
@@ -83,7 +84,10 @@ class Store {
         // Add test data to Store.movieDB
         keys.forEach(key => {
           const movie = testData[key]
+          //   debug
+          console.log('movie object in _createTestData:', movie)
           this.movieDB[key] = new Movie(movie)
+          console.log('movie object efter new Movie()', this.movieDB[key])
         });
     
         this.saveToLocalStorage()

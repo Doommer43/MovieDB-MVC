@@ -3,7 +3,9 @@ import Movie from '../Model/Movie';
 
 export default class MovieCardComponent {
     constructor(movie){
+        console.log("a",movie);
         this.movie = new Movie(movie);
+        console.log("b",this.movie);
     }
 
     render() {
